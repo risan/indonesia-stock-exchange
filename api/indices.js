@@ -1,7 +1,5 @@
 const client = require('./client');
 
-const BASE_URL = `${process.env.VERCEL_ENV === 'development' ? 'http://' : 'https://'}${process.env.VERCEL_URL}`;
-
 module.exports = async (req, res) => {
   try {
     const response = await client.get('/Stock/GetIndexFilters');
@@ -9,7 +7,7 @@ module.exports = async (req, res) => {
     const data = response.data.map((i, idx) => ({
       id: i.Id,
       name: i.Name,
-      stocks_url: `${BASE_URL}/api?index_id=${i.Id}`,
+      stocks_url: `https://indonesia-stock-exchange.vercel.app/api?index_id=${i.Id}`,
     }));
 
     return res.json({ data });
