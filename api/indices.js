@@ -1,4 +1,4 @@
-const client = require('../client');
+const client = require('./client');
 
 const BASE_URL = `${process.env.VERCEL_ENV === 'development' ? 'http://' : 'https://'}${process.env.VERCEL_URL}`;
 
