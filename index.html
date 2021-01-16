@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <title>Indonesia Stock Exchange API</title>
+    <meta name="description" content="API to get Indonesia stock exchange daily data from Pasardana website.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="API to get Indonesia stock exchange daily data from Pasardana website.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://indonesia-stock-exchange.vercel.app">
+    <meta property="og:image" content="https://indonesia-stock-exchange.vercel.app/cover.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://indonesia-stock-exchange.vercel.app/cover.png">
+    <meta name="twitter:title" content="Indonesia Stock Exchange API">
+    <meta name="twitter:description" content="API to get Indonesia stock exchange daily data from Pasardana website.">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/wysiwyg.css@0.0.3/wysiwyg.css">
+    <link rel=icon href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">📈</text></svg>'>
+    <style>
+        body {
+            font-family: monospace;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        table td {
+            vertical-align: top;
+        }
+    </style>
+</head>
+<body>
+<main class="wysiwyg">
+    <h1>
+        <span role="img" aria-label="Chart Increasing">📈</span>
+        <span>Indonesia Stock Exchange API</span>
+    </h1>
+    <p>
+        API to get Indonesia stock exchange daily data from <a href="https://pasardana.id/">Pasardana</a> website.
+    </p>
+
+    <h2>1. List of Stocks</h2>
+    <pre><a href="https://indonesia-stock-exchange.vercel.app/api">https://indonesia-stock-exchange.vercel.app/api</a></pre>
+
+    <h2>Query Parameter</h2>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Parameter</th>
+            <th>Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><code>search</code></td>
+            <td>
+                Type: <code>string</code><br>
+                Search query
+            </td>
+        </tr>
+        <tr>
+            <td><code>page</code></td>
+            <td>
+                Type: <code>int</code> | Default: <code>1</code><br>
+                Page to retrieve
+            </td>
+        </tr>
+        <tr>
+            <td><code>per_page</code></td>
+            <td>
+                Type: <code>int</code> | Default: <code>25</code><br>
+                Number of records per page
+            </td>
+        </tr>
+        <tr>
+            <td><code>sort_by</code></td>
+            <td>
+                Type: <code>string</code> | Default: <code>Code</code><br>
+                Sort the results by the given field. Possible values:
+                <code>Code</code>,
+                <code>Name</code>,
+                <code>SectorName</code>,
+                <code>SubSectorName</code>,
+                <code>Last</code>,
+                <code>AdjustedClosingPrice</code>,
+                <code>PrevClosingPrice</code>,
+                <code>AdjustedOpenPrice</code>,
+                <code>AdjustedHighPrice</code>,
+                <code>AdjustedLowPrice</code>,
+                <code>Per</code>,
+                <code>Pbr</code>,
+                <code>Volume</code>,
+                <code>Value</code>,
+                <code>Frequency</code>,
+                <code>OneDay</code>,
+                <code>OneWeek</code>,
+                <code>OneMonth</code>,
+                <code>ThreeMonth</code>,
+                <code>SixMonth</code>,
+                <code>OneYear</code>,
+                <code>ThreeYear</code>,
+                <code>FiveYear</code>,
+                <code>TenYear</code>,
+                <code>Mtd</code>,
+                <code>Ytd</code>,
+                <code>Capitalization</code>,
+                <code>BetaOneYear</code>,
+                <code>StdevOneYear</code>,
+                <code>LastDate</code>,
+            </td>
+        </tr>
+        <tr>
+            <td><code>sort_direction</code></td>
+            <td>
+                Type: <code>string</code> | Default: <code>asc</code><br>
+                Sort direction: <code>asc</code> or <code>desc</code>.
+            </td>
+        </tr>
+        <tr>
+            <td><code>index_id</code></td>
+            <td>
+                Type: <code>int</code> | Default:<br>
+                Filter stocks by the given index id.
+                Get all possible index ids from the <a href="#list-index">List Index endpoint</a>.
+            </td>
+        </tr>
+        <tr>
+            <td><code>sector_id</code></td>
+            <td>
+                Type: <code>int</code> | Default:<br>
+                Filter stocks by the given sector id.
+                Get all possible sector ids from the <a href="#list-sectors">List Sectors endpoint</a>.
+            </td>
+        </tr>
+        <tr>
+            <td><code>subsector_id</code></td>
+            <td>
+                Type: <code>int</code> | Default:<br>
+                Filter stocks by the given subsector id.
+                Get all possible subsector ids from the <a href="#list-sectors">List Sectors endpoint</a>.
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h2 id="list-index">2. List Index</h2>
+    <p>
+        List all stock index.
+    </p>
+    <pre><a href="https://indonesia-stock-exchange.vercel.app/api/index">https://indonesia-stock-exchange.vercel.app/api/index</a></pre>
+
+    <h2>3. List Sectors</h2>
+    <p>
+        List all available stocks' sectors and subsectors.
+    </p>
+    <pre><a href="https://indonesia-stock-exchange.vercel.app/api/sectors">https://indonesia-stock-exchange.vercel.app/api/sectors</a></pre>
+
+    <p>
+        By <a href="https://risanb.com">Risan Bagja</a> | <a href="https://github.com/risan/indonesia-stock-exchange">Source Code</a>
+    </p>
+</main>
+</body>
+</html>
