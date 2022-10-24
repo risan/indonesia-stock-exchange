@@ -38,7 +38,7 @@ const validate = async (params) => {
   const schema = yup.object().shape({
     search: yup.string().trim(),
     page: yup.number().positive().integer().default(1),
-    per_page: yup.number().positive().integer().default(25),
+    per_page: yup.number().positive().integer().default(250),
     sort_by: yup.string().trim().oneOf(SORTABLE_FIELDS).default('Code'),
     sort_direction: yup.string().trim().lowercase().oneOf(['asc', 'desc']).default('asc'),
     index_id: yup.number().positive().integer(),
